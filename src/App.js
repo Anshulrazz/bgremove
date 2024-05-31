@@ -75,6 +75,9 @@ function App() {
           <button className="button" onClick={handleDownloadResult}>Download</button>
         </div>
       </div>
+            <amp-auto-ads type="adsense"
+        data-ad-client="ca-pub-7404340598249958">
+</amp-auto-ads>
     </div>
   );
 }
