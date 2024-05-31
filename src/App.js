@@ -1,11 +1,23 @@
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
-import axios from 'axios'
-import lo from './logo.png'
+import axios from 'axios';
+import lo from './logo.png';
 
 function App() {
   const [file, setFile] = useState(null);
   const [resultImage, setResultImage] = useState(null);
+
+  useEffect(() => {
+    const ampScript = document.createElement('script');
+    ampScript.async = true;
+    ampScript.customElement = 'amp-auto-ads';
+    ampScript.src = 'https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js';
+    document.head.appendChild(ampScript);
+
+    return () => {
+      document.head.removeChild(ampScript);
+    };
+  }, []);
 
   const handleFileChange = (e) => {
     setFile(e.target.files[0]);
@@ -43,13 +55,13 @@ function App() {
     } catch (error) {
       console.error('Request failed:', error);
     }
-  }
+  };
 
   return (
     <div className="container">
       <div className="lo">
         <p>
-          <img classNagome='logo' src={lo} alt="" height="150px" />
+          <img className='logo' src={lo} alt="" height="150px" />
         </p>
         <h1 className='txt1'>Made by Ansh</h1>
       </div>
@@ -75,9 +87,9 @@ function App() {
           <button className="button" onClick={handleDownloadResult}>Download</button>
         </div>
       </div>
-            <amp-auto-ads type="adsense"
-        data-ad-client="ca-pub-7404340598249958">
-</amp-auto-ads>
+      <div>
+        <amp-auto-ads type="adsense" data-ad-client="ca-pub-7404340598249958"></amp-auto-ads>
+      </div>
     </div>
   );
 }
