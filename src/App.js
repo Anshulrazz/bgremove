@@ -7,17 +7,7 @@ function App() {
   const [file, setFile] = useState(null);
   const [resultImage, setResultImage] = useState(null);
 
-  useEffect(() => {
-    const ampScript = document.createElement('script');
-    ampScript.async = true;
-    ampScript.customElement = 'amp-auto-ads';
-    ampScript.src = 'https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js';
-    document.head.appendChild(ampScript);
-
-    return () => {
-      document.head.removeChild(ampScript);
-    };
-  }, []);
+  
 
   const handleFileChange = (e) => {
     setFile(e.target.files[0]);
