@@ -53,7 +53,7 @@ function App() {
         <p>
           <img className='logo' src={lo} alt="" height="150px" />
         </p>
-        <h1 className='txt1'>Made by Ansh</h1>
+        <h1 className='txt1'>Made by ❤️</h1>
       </div>
       <h1 className="para">Remove your Image Background</h1>
       <div className="content">
